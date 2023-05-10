@@ -8,7 +8,6 @@ type Props = {
 const Forslag = (props: Props) => {
   const { data: session, status } = useSession();
   const time = new Date(props.forslag.tid);
-  console.log(session);
 
   return (
     <div className="flex justify-center items-center flex-col">

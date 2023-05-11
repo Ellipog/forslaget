@@ -12,10 +12,10 @@ export default function Account() {
 	return status === "unauthenticated" ? (
 		router.push("/login")
 	) : (
-		<main className="w-screen h-screen bg-gray-600 flex flex-row">
+		<main className="w-screen h-screen bg-[#383838] flex flex-row">
 			<Navbar />
-			<div className="flex w-full h-full justify-around items-center flex-col">
-				<p>Velkommen {session?.user.email}</p>
+			<div className="flex w-full h-full justify-center gap-12 items-center flex-col">
+				<p className="text-white">Velkommen {session?.user.email}</p>
 				<button
 					className="p-2 text-center rounded bg-slate-300 w-72"
 					onClick={() => {

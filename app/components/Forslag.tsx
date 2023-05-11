@@ -47,32 +47,32 @@ const Forslag = (props: Props) => {
 	return session?.user.isAdmin && props.forslag.status === "🛠️venter" ? (
 		<div className="flex justify-center items-center flex-row w-5/6 gap-6">
 			<div className="w-5/6">
-				<div className="bg-gray-400 p-2 rounded-xl w-full flex justify-center items-left flex-col">
-					<h1 className="font-bold">{props.forslag.tittel}</h1>
-					<p className="w-full overflow-contain">{props.forslag.beskrivelse}</p>
+				<div className="bg-[#484848] p-2 border-2 border-white w-full flex justify-center items-left flex-col rounded">
+					<h1 className="font-bold text-white">{props.forslag.tittel}</h1>
+					<p className="w-full overflow-contain text-[#F8F8F8]">{props.forslag.beskrivelse}</p>
 					<div className="flex flex-row justify-between">
-						<p className="text-gray-700">{props.forslag.sted}</p>
+						<p className="text-[#BEBEBE]">{props.forslag.sted}</p>
 					</div>
-					<p className="w-full flex flex-row justify-between">
+					<p className="w-full flex flex-row justify-between text-[#A9A9A9]">
 						<span>{props.forslag.status}</span>
 						<span>{time.toLocaleDateString()}</span>
 					</p>
 				</div>
 			</div>
-			<div className="bg-gray-400 p-2 rounded-xl h-full w-1/12 flex justify-around items-center flex-col">
+			<div className="bg-[#484848] p-2 border-2 border-white h-full w-1/12 flex justify-around items-center flex-col rounded">
 				<FontAwesomeIcon icon={faThumbsUp} className="w-7 h-7 text-green-700" onClick={() => accept("yes")} />
 				<FontAwesomeIcon icon={faThumbsDown} className="w-7 h-7 text-red-700" onClick={() => accept("no")} />
 			</div>
 		</div>
 	) : (
 		<div className="flex justify-center items-center flex-col w-5/6">
-			<div className="bg-gray-400 p-2 rounded-xl w-full flex justify-center items-left flex-col">
-				<h1 className="font-bold">{props.forslag.tittel}</h1>
-				<p className="w-full overflow-contain">{props.forslag.beskrivelse}</p>
+			<div className="bg-[#484848] p-2 border-2 border-white w-full flex justify-center items-left flex-col rounded">
+				<h1 className="font-bold text-white">{props.forslag.tittel}</h1>
+				<p className="w-full overflow-contain text-[#F8F8F8]">{props.forslag.beskrivelse}</p>
 				<div className="flex flex-row justify-between">
-					<p className="text-gray-700">{props.forslag.sted}</p>
+					<p className="text-[#BEBEBE]">{props.forslag.sted}</p>
 				</div>
-				<p className="w-full flex flex-row justify-between">
+				<p className="w-full flex flex-row justify-between text-[#A9A9A9]">
 					<span>{props.forslag.status}</span>
 					<span>{time.toLocaleDateString()}</span>
 				</p>

@@ -35,46 +35,46 @@ export default function Home() {
 	return status === "unauthenticated" ? (
 		router.push("/login")
 	) : (
-		<main className="w-screen h-screen bg-gray-600 flex flex-row">
+		<main className="w-screen h-screen bg-[#383838] flex flex-row">
 			<Navbar />
 			<div className="flex w-full h-full justify-around items-center">
-				<div className="w-2/5 h-5/6 bg-gray-500 flex justify-top items-center flex-col pt-5 gap-5 rounded">
+				<div className="w-2/5 h-5/6 bg-[#404040] flex justify-top items-center flex-col pt-5 gap-5 border-2 border-[#E0E0E0]">
 					{Object.values(forslag).map((forslag, i) => {
 						return <Forslag key={i} forslag={forslag} setForslag={setForslag} setUpdate={setUpdate} update={update} />;
 					})}
 				</div>
-				<div className="w-1/5 h-5/6 bg-gray-500 flex justify-top items-center flex-col pt-5 gap-5 rounded p-5">
-					<div className="bg-gray-400 w-full p-4 pt-2 gap-2 rounded flex flex-col justify-center items-center">
-						<h1 className="font-bold">Aktivitet</h1>
+				<div className="w-1/5 h-5/6 bg-[#404040] flex justify-top items-center flex-col pt-5 gap-5 border-2 border-[#E0E0E0]">
+					<div className="w-full p-4 pt-2 gap-2 rounded flex flex-col justify-center items-center">
+						<h1 className="text-white font-extrabold">Aktivitet</h1>
 						<input
-							className="bg-gray-300 p-1 pr-2 rounded w-full"
+							className="border-white bg-[#484848] text-white p-1 pr-2 border-2 w-full rounded"
 							type="text"
 							placeholder="Tittel"
 							value={aktivitet.tittel}
 							onChange={(e) => setAktivitet({ ...aktivitet, tittel: e.target.value })}
 						/>
 						<input
-							className="bg-gray-300 p-1 pr-2 rounded w-full"
+							className="border-white bg-[#484848] text-white p-1 pr-2 border-2 w-full rounded"
 							type="text"
 							placeholder="Beskrivelse"
 							value={aktivitet.beskrivelse}
 							onChange={(e) => setAktivitet({ ...aktivitet, beskrivelse: e.target.value })}
 						/>
 						<input
-							className="bg-gray-300 p-1 pr-2 rounded w-full"
+							className="border-white bg-[#484848] text-white p-1 pr-2 border-2 w-full rounded"
 							type="date"
 							placeholder="Tid"
 							value={aktivitet.tid}
 							onChange={(e) => setAktivitet({ ...aktivitet, tid: e.target.value })}
 						/>
 						<input
-							className="bg-gray-300 p-1 pr-2 rounded w-full"
+							className="border-white bg-[#484848] text-white p-1 pr-2 border-2 w-full rounded"
 							type="text"
 							placeholder="Sted"
 							value={aktivitet.sted}
 							onChange={(e) => setAktivitet({ ...aktivitet, sted: e.target.value })}
 						/>
-						<button className="bg-gray-200 p-1 pr-2 rounded w-full" onClick={() => sendAktivitetForslag()}>
+						<button className="p-1 pr-2 w-72 text-white font-medium" onClick={() => sendAktivitetForslag()}>
 							Legg til forslag
 						</button>
 					</div>

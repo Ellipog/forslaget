@@ -38,12 +38,12 @@ export default function Home() {
 		<main className="w-screen h-screen bg-[#383838] flex flex-row">
 			<Navbar />
 			<div className="flex w-full h-full justify-around items-center">
-				<div className="w-2/5 h-5/6 bg-[#404040] flex justify-top items-center flex-col pt-5 gap-5 border-2 border-[#E0E0E0]">
+				<div className="w-2/5 h-5/6 bg-[#404040] flex justify-top items-center flex-col pt-5 gap-5 border-2 border-[#E0E0E0] rounded">
 					{Object.values(forslag).map((forslag, i) => {
 						return <Forslag key={i} forslag={forslag} setForslag={setForslag} setUpdate={setUpdate} update={update} />;
 					})}
 				</div>
-				<div className="w-1/5 h-5/6 bg-[#404040] flex justify-top items-center flex-col pt-5 gap-5 border-2 border-[#E0E0E0]">
+				<div className="w-1/5 h-5/6 bg-[#404040] flex justify-top items-center flex-col pt-5 gap-5 border-2 border-[#E0E0E0] rounded">
 					<div className="w-full p-4 pt-2 gap-2 rounded flex flex-col justify-center items-center">
 						<h1 className="text-white font-extrabold">Aktivitet</h1>
 						<input

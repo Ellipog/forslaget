@@ -84,7 +84,7 @@ export default function Home() {
 			</div>
 			<div className="flex w-3/6 h-5/6 justify-center gap-5 items-center flex-col text-white">
 				<h1 className="font-bold text-2xl">Saved Users</h1>
-				<div className="flex w-4/6 h-5/6 gap-6 justify-top items-center flex-col bg-[#404040] border-2 p-5">
+				<div className="flex w-4/6 h-5/6 gap-6 justify-top items-center flex-col bg-[#404040] border-2 p-5 rounded">
 					{Object.values(batch).map((user, i) => {
 						return (
 							<div key={i} className="flex flex-row gap-4 w-full">
@@ -100,7 +100,9 @@ export default function Home() {
 								<button
 									className="border-2 border-white rounded p-2 bg-[#484848] text-white"
 									onClick={() => {
-										setBatch(batch.filter((user) => user.email !== user.email));
+										const newBatch = [...batch];
+										newBatch.splice(i, 1);
+										setBatch(newBatch);
 										toast.success("Bruker fjernet fra batch!");
 									}}
 								>

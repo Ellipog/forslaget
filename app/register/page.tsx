@@ -12,17 +12,30 @@ export default function Register() {
 	const router = useRouter();
 
 	function register() {
-		console.log(email, password);
-		axios
-			.post("/api/register", { email: email, password: password })
-			.then((res) => {
-				toast.success("Bruker opprettet!");
-				router.push("/");
-				console.log(res);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
+		const isValidEmail = validateEmail(email);
+		if (email === "" || password === "") {
+			toast.error("Fyll inn alle feltene!");
+			return;
+		} else if (isValidEmail) {
+			axios
+				.post("/api/register", { email: email, password: password })
+				.then((res) => {
+					toast.success("Bruker opprettet!");
+					router.push("/");
+					console.log(res);
+				})
+				.catch((err) => {
+					console.log(err);
+				});
+		} else {
+			toast.error("Ugyldig email!");
+			return;
+		}
+	}
+
+	function validateEmail(email: string) {
+		const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
 	}
 
 	return (

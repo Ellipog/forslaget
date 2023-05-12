@@ -5,6 +5,7 @@
 - Admin og normal bruker, forskjellige rettigheter
 - Kryptering av passord
 - Brukere kan legge inn forslag til nye ting i databasen
+- Foreslå aktiviteter
 - Adminer kan godkjenne eller avslå disse forslagene
 
 ## Verktøy brukt

@@ -21,6 +21,7 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
+        // checks if the user exists in the database, and validates if password is correct, uses bcrypt to compare
         if (!credentials?.email || !credentials?.password) throw new Error("Please enter your email and password");
         const user = await dbUser.findOne({ email: credentials.email });
         if (!user) throw new Error("Invalid email or password");
@@ -41,6 +42,7 @@ const handler = NextAuth({
     strategy: "jwt",
   },
   secret: process.env.SECRET,
+  // gives me correct data to use in the frontend to check if user is admin or not
   callbacks: {
     async session({ session }) {
       const user = await dbUser.findOne({ email: session.user.email });
